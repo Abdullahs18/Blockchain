@@ -1,20 +1,27 @@
 const Block = require('./block');
 
-describe('Block', () => {
-    const timestamp = 'a-date';
-    const lastHash = 'foo-hash';
-    const hash = 'bar-hash';
-    const data = ['blockchain', 'data'];
+describe('mineBlock()', () => {
+    const lastBlock = Block.genesis();
+    const data = ['transaction1', 'transaction2'];
 
-    const block = new Block({
-        timestamp,
-        lastHash,
-        hash,
+    const minedBlock = Block.mineBlock({
+        lastBlock,
         data
     });
 
-    it('block has the correct timestamp and lastHash', () => {
-        expect(block.timestamp).toEqual(timestamp);
-        expect(block.lastHash).toEqual(lastHash);
+    it('creates a Block instance', () => {
+        expect(minedBlock instanceof Block).toBe(true);
+    });
+
+    it('sets the lastHash to the previous block hash', () => {
+        expect(minedBlock.lastHash).toEqual(lastBlock.hash);
+    });
+
+    it('sets the data correctly', () => {
+        expect(minedBlock.data).toEqual(data);
+    });
+
+    it('creates a hash', () => {
+        expect(minedBlock.hash).toBeTruthy();
     });
 });
