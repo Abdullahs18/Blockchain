@@ -12,3 +12,28 @@ let notDefined
 
 let name="abdullah"
 console.log(`Hello, ${name}!`);
+
+
+function add (a,b){
+    return a+b;
+}
+
+//arrow function
+
+const add2=(a,b)=>a+b;
+
+const square=(x)=>{return x*x}
+
+function greet(name="xyz"){
+    console.log(`${name}`)
+}
+
+//loops
+for (let i=0;i<10;i++){
+    console.log(i);
+}
+let i=0;
+while (i<10){
+    i++;
+}
+
