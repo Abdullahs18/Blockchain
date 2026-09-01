@@ -37,3 +37,22 @@ while (i<10){
     i++;
 }
 
+let arr=[1,2,3];
+arr.push(4);
+arr.pop();
+arr.length;
+
+//objects
+let person={
+    name:"abdullah",
+    age:22,
+    
+}
+console.log(person.name);
+console.log(person["name"]);
+
+class animal{
+    constructor (name){
+        this.name=name;
+    }
+}
